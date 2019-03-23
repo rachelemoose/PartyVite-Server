@@ -18,6 +18,7 @@
   "homepage": "https://github.com/rachelemoose/PartyVite-Server#readme",
   "dependencies": {
     "dotenv": "^7.0.0",
+    "express": "^4.16.4",
     "twilio": "^3.29.2"
   }
 }
