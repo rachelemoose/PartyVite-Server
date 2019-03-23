@@ -1,8 +1,8 @@
 require('dotenv').config();
-const client = require('twilio')(accountSid, authToken);
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 const twilioNumber = process.env.TWILIO_PHONE_NUMBER;
+const client = require('twilio')(accountSid, authToken);
 // this array needs to popoulate with hosts's contacts 
 const invitees = ['+15716436981', '+17187535298']
 
