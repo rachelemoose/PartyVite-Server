@@ -1,0 +1,19 @@
+{
+  "name": "partyvite-server",
+  "version": "1.0.0",
+  "description": "server function",
+  "main": "sms.js",
+  "scripts": {
+    "test": "node sms.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rachelemoose/PartyVite-Server.git"
+  },
+  "author": "Rachel Moose",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rachelemoose/PartyVite-Server/issues"
+  },
+  "homepage": "https://github.com/rachelemoose/PartyVite-Server#readme"
+}
