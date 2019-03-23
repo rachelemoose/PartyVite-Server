@@ -6,17 +6,23 @@ const client = require('twilio')(accountSid, authToken);
 const express = require('express');
 const app = express();
 var PORT = process.env.PORT || 3000;
+const bodyParser = require('body-parser')
+app.use(bodyParser());
+// curl -d '{"invitees":[15716436981],"message":"Hello PartyVite"}' -H "Content-Type: application/json" -X POST localhost:3000/invite
 // this array needs to popoulate with hosts's contacts 
 
 app.post('/invite', (req, res) => {
-    const invitees = ['+15716436981', '+17187535298']
-    let body = "Rachel Moose has sent you a PartyVite! Send 'Yes' if you can make it, 'No' if you can't attend, and 'Maybe', if you're not sure."
+    // const invitees = ['+15716436981', '+17187535298']
+    // let message = "Rachel Moose has sent you a PartyVite! Send 'Yes' if you can make it, 'No' if you can't attend, and 'Maybe', if you're not sure."
+    console.log(req.body)
+    const invitees = req.body.invitees
+    const message = req.body.message
     Promise.all(
     invitees.map(invitee => {
         return client.messages.create({
         to: invitee,
         from: twilioNumber,
-        body: body
+        body: message
         });
     })
     )
