@@ -28,8 +28,12 @@ app.post('/invite', (req, res) => {
     )
     .then(messages => {
         console.log('Messages sent!');
+        res.status(204);
     })
-    .catch(err => console.error(err));
+    .catch(err => {
+        console.error(err); 
+        res.status(404);
+    });
 });
 
 
