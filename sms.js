@@ -12,8 +12,6 @@ app.use(bodyParser());
 // this array needs to popoulate with hosts's contacts 
 
 app.post('/invite', (req, res) => {
-    // const invitees = ['13334445555', '12345678909']
-    // let message = "Rachel Moose has sent you a PartyVite! Send 'Yes' if you can make it, 'No' if you can't attend, and 'Maybe', if you're not sure."
     console.log(req.body)
     const invitees = req.body.invitees
     const message = req.body.message
